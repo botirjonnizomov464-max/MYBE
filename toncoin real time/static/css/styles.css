@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #001f3f, #000);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 2.6em;
+  margin-bottom: 30px;
+  color: #00e6ff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #0077ff;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ffff; }
+  to { text-shadow: 0 0 25px #0077ff; }
+}
+
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  width: 90%;
+  max-width: 1100px;
+}
+
+.card {
+  background: linear-gradient(145deg, #011, #022);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.4s, box-shadow 0.4s;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: rotateY(12deg) rotateX(5deg) scale(1.07);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+.card h2 {
+  font-size: 1.5em;
+  color: #00e6ff;
+}
+
+.price {
+  font-size: 1.4em;
+  margin-top: 12px;
+}
+
+.change {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.change.up {
+  color: #00ff99;
+  text-shadow: 0 0 10px #00ff99;
+}
+
+.change.down {
+  color: #ff4d4d;
+  text-shadow: 0 0 10px #ff4d4d;
+}
+
+.card:active {
+  transform: rotateY(0) scale(0.98);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
